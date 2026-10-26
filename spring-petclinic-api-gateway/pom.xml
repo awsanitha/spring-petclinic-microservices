@@ -15,6 +15,7 @@
     </parent>
 
     <properties>
+    <argLine></argLine>
         <webjars-bootstrap.version>5.3.3</webjars-bootstrap.version>
         <webjars-font-awesome.version>4.7.0</webjars-font-awesome.version>
         <webjars-angular.version>1.8.3</webjars-angular.version>
@@ -222,4 +223,19 @@
             </build>
         </profile>
     </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
