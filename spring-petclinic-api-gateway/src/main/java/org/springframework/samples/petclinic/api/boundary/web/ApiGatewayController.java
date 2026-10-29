@@ -58,7 +58,7 @@ public class ApiGatewayController {
                 visitsServiceClient.getVisitsForPets(owner.getPetIds())
                     .transform(it -> {
                         ReactiveCircuitBreaker cb = cbFactory.create("getOwnerDetails");
-                        return cb.run(it, throwable -> emptyVisitsForPets());
+                        return cb.run(it, _ -> emptyVisitsForPets());
                     })
                     .map(addVisitsToOwner(owner))
             );
