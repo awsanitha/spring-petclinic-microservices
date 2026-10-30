@@ -87,7 +87,7 @@ public class AIDataProvider {
 
     @NotNull
     private URI getCustomerServiceUri() {
-        return discoveryClient.getInstances("customers-service").get(0).getUri();
+        return discoveryClient.getInstances("customers-service").getFirst().getUri();
     }
 
 }
